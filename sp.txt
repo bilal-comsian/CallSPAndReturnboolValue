@@ -1,0 +1,11 @@
+CREATE PROCEDURE [dbo].[sp_ReturnTrueOnPostiveValue]
+	-- Add the parameters for the stored procedure here
+	@inputValue int
+	
+AS
+BEGIN
+	declare @outputValue bit
+
+    select @outputValue = CASE when @inputValue > 0 then 1 else 0 end
+	select @outputValue
+END
